@@ -1,0 +1,34 @@
+
+class Car:
+
+    def __init__(self,name,fuelRate, velocity):
+        self.name=name
+        self.fuelRate=fuelRate
+        self.velocity=velocity
+    def getVelocity(self):
+        return self.velocity
+    def setVelocity(self,v):
+        if v >= 0 and v <=200:
+            self.velocity= v
+        else:
+            print("must be between 0 and 200")
+    def FeulRate(self):
+        return self.fuelRate
+
+    def setFeulRate(self,feul):
+        if feul > 0 and feul <=1000:
+            self.fuelRate= feul
+        else:
+            print("need to refeul car")
+    def run(self,velovity,distance):
+        self.setFeulRate(self.fuelRate-10)
+        self.setVelocity(velovity)
+        self.stop(distance)
+
+    def stop(self,distance):
+        self.setVelocity(0)
+        if distance == 0:
+            print("you arrive distenation")
+        elif self.fuelRate < 0 :
+            print("you need to refeul")
+
